@@ -18,6 +18,7 @@ Los pasos y referencias asumen el uso del sistema operativo Windows, en caso otr
 - Crear un repositorio local en un nuevo directorio.
 - Agregar un archivo Readme.md, agregar algunas líneas con texto a dicho
 archivo.
+![Descripción de la imagen](imagen1.jpg)
 
 - Crear un commit y proveer un mensaje descriptivo.
 
