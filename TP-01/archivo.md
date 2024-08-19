@@ -1,9 +1,10 @@
 INGENIERIA DE SOFTWARE III- RIVERO BOSCH JOSEFINA
-###TP - 01: GIT BASICO
 
-##Desarrollo:
+### TP - 01: GIT BASICO
 
-#1- Instalar Git
+## Desarrollo:
+
+# 1- Instalar Git
 
 Los pasos y referencias asumen el uso del sistema operativo Windows, en caso otros SO seguir recomendaciones específicas.
 - Bajar e instalar el cliente git. Por ejemplo, https://git-for-windows.github.io/
@@ -12,7 +13,7 @@ Los pasos y referencias asumen el uso del sistema operativo Windows, en caso otr
 - https://www.sourcetreeapp.com/
 - Lista completa: https://git-scm.com/downloads/guis/
 
-#2- Crear un repositorio local y agregar archivos
+# 2- Crear un repositorio local y agregar archivos
 
 - Crear un repositorio local en un nuevo directorio.
 - Agregar un archivo Readme.md, agregar algunas líneas con texto a dicho
@@ -21,11 +22,11 @@ archivo.
 - Crear un commit y proveer un mensaje descriptivo.
 
 
-#3- Configuración del Editor Predeterminado
+# 3- Configuración del Editor Predeterminado
 
 - Instalar Notepad ++ para Windows o TextMate para Mac OS, colocarle un alias y configurarlo como editor predeterminado
 
-#4- Creación de Repos 01 -> Crearlo en GitHub, clonarlo localmente y subir cambios
+# 4- Creación de Repos 01 -> Crearlo en GitHub, clonarlo localmente y subir cambios
 
 - Crear una cuenta en https://github.com
 - Crear un nuevo repositorio en dicha página con el Readme.md por defecto
@@ -38,7 +39,7 @@ archivo.
 
 
 
-#5- Creación de Repos 02-> Crearlo localmente y subirlo a GitHub
+# 5- Creación de Repos 02-> Crearlo localmente y subirlo a GitHub
 
 - Crear un repo local
 - Agregar archivo Readme.md con algunas lineas de texto
@@ -49,14 +50,14 @@ archivo.
 - Subir cambios.
 
 
-#6- Ramas#
+# 6- Ramas#
 
 - Crear una nueva rama
 - Cambiarse a esa rama
 - Hacer un cambio en el archivo Readme.md y hacer commit
 - Revisar la diferencia entre ramas
 
-#7- Merges
+# 7- Merges
 
 - Hacer un merge FF
 - Borrar la rama creada
@@ -64,7 +65,7 @@ archivo.
 - Repetir el ejercicio 6 para poder hacer un merge con No-FF
 
 
-#8- Resolución de Conflictos
+# 8- Resolución de Conflictos
 
 - Instalar alguna herramienta de comparación. Idealmente una 3-Way:
   -  P4Merge https://www.perforce.com/downloads/helix-visual-client-p4v:
@@ -83,7 +84,7 @@ archivo.
 - Agregar .orig al .gitignore
 - Hacer commit y push
 
-#9- Familiarizarse con el concepto de Pull Request
+# 9- Familiarizarse con el concepto de Pull Request
 
 - Explicar que es un pull request.
 - Crear un branch local y agregar cambios a dicho branch.
@@ -91,18 +92,18 @@ archivo.
 - Completar el proceso de revisión en github y mergear el PR al Branch master.
 
 
-#10- Algunos ejercicios online
+# 10- Algunos ejercicios online
 
 - Entrar a la página https://learngitbranching.js.org/
 - Completar los ejercicios Introduction Sequence
 - Opcional - Completar el resto de los ejercicios para ser un experto en Git!!!
 
-#11- Crear Repositorio de la materia
+# 11- Crear Repositorio de la materia
 
 - Crear un repositorio para la materia en github. Por ejemplo ing-software-3
 - Subir archivo(s) .md con los resultados e imágenes de este trabajo práctico. Puede ser en una subcarpeta trabajo-practico-01
 
-#Referencias
+# Referencias
 - https://try.github.io/
 - https://github.github.com/training-kit/downloads/es_ES/github-git-cheat-sheet.pdf
 - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
