@@ -70,7 +70,7 @@ archivo.
 - Subir cambios.
 
 
-# 6- Ramas#
+# 6- Ramas
 
 - Crear una nueva rama
 - Cambiarse a esa rama
