@@ -83,13 +83,14 @@ docker container prune
 Conceptos de DockerFile
 Leer https://docs.docker.com/engine/reference/builder/
 Describir las instrucciones
-FROM
-RUN
-ADD
-COPY
-EXPOSE
-CMD
-ENTRYPOINT
+FROM: Es la primera instrucción en cualquier Dockerfile y especifica la imagen base a partir de la cual se construirá la nueva imagen. Cada Dockerfile debe comenzar con una instrucción FROM.
+RUN: Ejecuta cualquier comando en una capa nueva de la imagen. Es comúnmente usado para instalar paquetes necesarios.
+ADD: Copia archivos/directorios desde el host a una imagen Docker. A diferencia de COPY, ADD puede extraer archivos tar automáticamente y también puede funcionar con URLs.
+COPY: Similar a ADD, pero solo para copiar archivos o directorios locales al sistema de archivos de la imagen en una ubicación especificada. 
+EXPOSE: Informa a Docker que el contenedor escuchará en el puerto especificado en tiempo de ejecución. No abre el puerto, pero es informativo para la configuración del contenedor. 
+CMD: Define el comando predeterminado que se ejecutará cuando un contenedor se inicie a partir de la imagen. Solo puede haber una instrucción CMD; si hay varias, solo la última se ejecutará.
+ENTRYPOINT: Similar a CMD, pero se usa para definir un comando fijo que siempre se ejecutará cuando se inicie un contenedor. A menudo se combina con CMD para pasar argumentos al comando.
+
 A partir del código https://github.com/ingsoft3ucc/SimpleWebAPI crearemos una imagen.
 Clonar repo
 Crear imagen etiquetándola con un nombre. El punto final le indica a Docker que use el dir actual
