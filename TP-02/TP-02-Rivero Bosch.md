@@ -7,7 +7,7 @@
 Diferentes opciones para cada sistema operativo
 https://docs.docker.com/
 Ejecutar el siguiente comando para comprobar versiones de cliente y demonio.
-docker versiÛn
+docker versi√≥n
 
 # 2- Explorar DockerHub
 Registrase en docker hub: https://hub.docker.com/
@@ -16,51 +16,51 @@ Familiarizarse con el portal
 # 3- Obtener la imagen BusyBox
 Ejecutar el siguiente comando, para bajar una imagen de DockerHub
 docker pull busybox
-![DescripciÛn de la imagen](imagen1.jpg)
+![Descripci√≥n de la imagen](imagen1.jpg)
 
-Verificar quÈ versiÛn y tamaÒo tiene la imagen bajada, obtener una lista de im·genes locales:
+Verificar qu√© versi√≥n y tama√±o tiene la imagen bajada, obtener una lista de im√°genes locales:
 docker images
-![DescripciÛn de la imagen](imagen2.jpg)
+![Descripci√≥n de la imagen](imagen2.jpg)
 
 # 4- Ejecutando contenedores
 Ejecutar un contenedor utilizando el comando run de docker:
 docker run busybox
-![DescripciÛn de la imagen](imagen3.jpg)
+![Descripci√≥n de la imagen](imagen3.jpg)
 
-Explicar porque no se obtuvo ning˙n resultado
+Explicar porque no se obtuvo ning√∫n resultado
 
-Especificamos alg˙n comando a correr dentro del contenedor, ejecutar por ejemplo:
+Especificamos alg√∫n comando a correr dentro del contenedor, ejecutar por ejemplo:
 
 docker run busybox echo "Hola Mundo"
-![DescripciÛn de la imagen](imagen4.jpg)
+![Descripci√≥n de la imagen](imagen4.jpg)
 
 Ver los contenedores ejecutados utilizando el comando ps:
 docker ps
-![DescripciÛn de la imagen](imagen5.jpg)
+![Descripci√≥n de la imagen](imagen5.jpg)
 
-Vemos que no existe nada en ejecuciÛn, correr entonces:
+Vemos que no existe nada en ejecuci√≥n, correr entonces:
 docker ps -a
-![DescripciÛn de la imagen](imagen6.jpg)
+![Descripci√≥n de la imagen](imagen6.jpg)
 
 Mostrar el resultado y explicar que se obtuvo como salida del comando anterior.
 
 # 5- Ejecutando en modo interactivo
 Ejecutar el siguiente comando
 docker run -it busybox sh
-![DescripciÛn de la imagen](imagen7.jpg)
+![Descripci√≥n de la imagen](imagen7.jpg)
 
 Para cada uno de los siguientes comandos dentro de contenedor, mostrar los resultados:
 ps
-![DescripciÛn de la imagen](imagen8.jpg)
+![Descripci√≥n de la imagen](imagen8.jpg)
 
 uptime
-![DescripciÛn de la imagen](imagen9.jpg)
+![Descripci√≥n de la imagen](imagen9.jpg)
 
 free
-![DescripciÛn de la imagen](imagen10.jpg)
+![Descripci√≥n de la imagen](imagen10.jpg)
 
 ls -l /
-![DescripciÛn de la imagen](imagen11.jpg)
+![Descripci√≥n de la imagen](imagen11.jpg)
 
 Salimos del contenedor con:
 exit
@@ -68,39 +68,47 @@ exit
 # 6- Borrando contenedores terminados
 Obtener la lista de contenedores
 docker ps -a
-![DescripciÛn de la imagen](imagen12.jpg)
+![Descripci√≥n de la imagen](imagen12.jpg)
 
 Para borrar podemos utilizar el id o el nombre (autogenerado si no se especifica) de contenedor que se desee, por ejemplo:
 docker rm elated_lalande
-![DescripciÛn de la imagen](imagen13.jpg)
+![Descripci√≥n de la imagen](imagen13.jpg)
 
-Para borrar todos los contenedores que no estÈn corriendo, ejecutar cualquiera de los siguientes comandos:
+Para borrar todos los contenedores que no est√©n corriendo, ejecutar cualquiera de los siguientes comandos:
 docker rm $(docker ps -a -q -f status=exited)
 docker container prune
-![DescripciÛn de la imagen](imagen14.jpg)
+![Descripci√≥n de la imagen](imagen14.jpg)
 
 # 7- Construir una imagen
 Conceptos de DockerFile
 Leer https://docs.docker.com/engine/reference/builder/
 Describir las instrucciones
-FROM: Es la primera instrucciÛn en cualquier Dockerfile y especifica la imagen base a partir de la cual se construir· la nueva imagen. Cada Dockerfile debe comenzar con una instrucciÛn FROM.
-RUN: Ejecuta cualquier comando en una capa nueva de la imagen. Es com˙nmente usado para instalar paquetes necesarios.
-ADD: Copia archivos/directorios desde el host a una imagen Docker. A diferencia de COPY, ADD puede extraer archivos tar autom·ticamente y tambiÈn puede funcionar con URLs.
-COPY: Similar a ADD, pero solo para copiar archivos o directorios locales al sistema de archivos de la imagen en una ubicaciÛn especificada. 
-EXPOSE: Informa a Docker que el contenedor escuchar· en el puerto especificado en tiempo de ejecuciÛn. No abre el puerto, pero es informativo para la configuraciÛn del contenedor. 
-CMD: Define el comando predeterminado que se ejecutar· cuando un contenedor se inicie a partir de la imagen. Solo puede haber una instrucciÛn CMD; si hay varias, solo la ˙ltima se ejecutar·.
-ENTRYPOINT: Similar a CMD, pero se usa para definir un comando fijo que siempre se ejecutar· cuando se inicie un contenedor. A menudo se combina con CMD para pasar argumentos al comando.
 
-A partir del cÛdigo https://github.com/ingsoft3ucc/SimpleWebAPI crearemos una imagen.
+FROM: Es la primera instrucci√≥n en cualquier Dockerfile y especifica la imagen base a partir de la cual se construir√° la nueva imagen. Cada Dockerfile debe comenzar con una instrucci√≥n FROM.
+
+RUN: Ejecuta cualquier comando en una capa nueva de la imagen. Es com√∫nmente usado para instalar paquetes necesarios.
+
+ADD: Copia archivos/directorios desde el host a una imagen Docker. A diferencia de COPY, ADD puede extraer archivos tar autom√°ticamente y tambi√©n puede funcionar con URLs.
+
+COPY: Similar a ADD, pero solo para copiar archivos o directorios locales al sistema de archivos de la imagen en una ubicaci√≥n especificada. 
+
+EXPOSE: Informa a Docker que el contenedor escuchar√° en el puerto especificado en tiempo de ejecuci√≥n. No abre el puerto, pero es informativo para la configuraci√≥n del contenedor. 
+
+CMD: Define el comando predeterminado que se ejecutar√° cuando un contenedor se inicie a partir de la imagen. Solo puede haber una instrucci√≥n CMD; si hay varias, solo la √∫ltima se ejecutar√°.
+
+ENTRYPOINT: Similar a CMD, pero se usa para definir un comando fijo que siempre se ejecutar√° cuando se inicie un contenedor. A menudo se combina con CMD para pasar argumentos al comando.
+
+
+A partir del c√≥digo https://github.com/ingsoft3ucc/SimpleWebAPI crearemos una imagen.
 Clonar repo
-Crear imagen etiquet·ndola con un nombre. El punto final le indica a Docker que use el dir actual
+Crear imagen etiquet√°ndola con un nombre. El punto final le indica a Docker que use el dir actual
 docker build -t mywebapi .
-Revisar Dockerfile y explicar cada lÌnea
-Ver im·genes disponibles
+Revisar Dockerfile y explicar cada l√≠nea
+Ver im√°genes disponibles
 Ejecutar un contenedor con nuestra imagen
 Subir imagen a nuestra cuenta de dockerhub
-7.1 Inicia sesiÛn en Docker Hub
-Primero, aseg˙rate de estar autenticado en Docker Hub desde tu terminal:
+7.1 Inicia sesi√≥n en Docker Hub
+Primero, aseg√∫rate de estar autenticado en Docker Hub desde tu terminal:
 docker login
 7.2 Etiquetar la imagen a subir con tu nombre de usuario de Docker Hub y el nombre de la imagen. Por ejemplo:
 docker tag <nombre_imagen_local> <tu_usuario_dockerhub>/<nombre_imagen>:<tag>
@@ -110,7 +118,7 @@ docker push <tu_usuario_dockerhub>/<nombre_imagen>:<tag>
 7.4 Verificar la Subida
 docker pull <tu_usuario_dockerhub>/<nombre_imagen>:<tag>
 # 8- Publicando puertos
-En el caso de aplicaciones web o base de datos donde se interact˙a con estas aplicaciones a travÈs de un puerto al cual hay que acceder, estos puertos est·n visibles solo dentro del contenedor. Si queremos acceder desde el exterior deberemos exponerlos.
+En el caso de aplicaciones web o base de datos donde se interact√∫a con estas aplicaciones a trav√©s de un puerto al cual hay que acceder, estos puertos est√°n visibles solo dentro del contenedor. Si queremos acceder desde el exterior deberemos exponerlos.
 
 Ejecutar la siguiente imagen, en este caso utilizamos la bandera -d (detach) para que nos devuelva el control de la consola:
 docker run --name myapi -d mywebapi
@@ -140,8 +148,8 @@ dotnet SimpleWebAPI.dll
 -Volvemos a navegar a http://localhost/weatherforecast
 
 Salimos del contenedor
-# 10- Montando vol˙menes
-Hasta este punto los contenedores ejecutados no tenÌan contacto con el exterior, ellos corrÌan en su propio entorno hasta que terminaran su ejecuciÛn. Ahora veremos cÛmo montar un volumen dentro del contenedor para visualizar por ejemplo archivos del sistema huÈsped:
+# 10- Montando vol√∫menes
+Hasta este punto los contenedores ejecutados no ten√≠an contacto con el exterior, ellos corr√≠an en su propio entorno hasta que terminaran su ejecuci√≥n. Ahora veremos c√≥mo montar un volumen dentro del contenedor para visualizar por ejemplo archivos del sistema hu√©sped:
 
 Ejecutar el siguiente comando, cambiar myusuario por el usuario que corresponda. En Mac puede utilizarse /Users/miusuario/temp):
 docker run -it --rm -p 80:80 -v /Users/miuser/temp:/var/temp  mywebapi
@@ -178,5 +186,5 @@ Explicar que se logro con el comando docker run y docker exec ejecutados en este
 # 12- Hacer el punto 11 con Microsoft SQL Server
 Armar un contenedor con SQL Server
 Crear BD, Tablas y ejecutar SELECT
-# 13- PresentaciÛn del trabajo pr·ctico.
-Subir un archivo md (puede ser en una carpeta) trabajo-practico-02 con las salidas de los comandos utilizados. Si es necesario incluir tambiÈn capturas de pantalla.
+# 13- Presentaci√≥n del trabajo pr√°ctico.
+Subir un archivo md (puede ser en una carpeta) trabajo-practico-02 con las salidas de los comandos utilizados. Si es necesario incluir tambi√©n capturas de pantalla.
