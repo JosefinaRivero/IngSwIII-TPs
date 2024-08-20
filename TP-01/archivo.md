@@ -41,7 +41,6 @@ archivo.
 - Crear un commit y porveer un mensaje descriptivo
 - Intentar un push al repo remoto
 ![Descripción de la imagen](imagen4.jpg)
-![Descripción de la imagen](imagen5.jpg)
 
 - En caso de ser necesario configurar las claves SSH requeridas y reintentar el push.
 
