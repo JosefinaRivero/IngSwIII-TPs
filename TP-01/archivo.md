@@ -21,6 +21,10 @@ archivo.
 ![Descripción de la imagen](imagen1.jpg)
 
 - Crear un commit y proveer un mensaje descriptivo.
+![Descripción de la imagen](imagen2.jpg)
+![Descripción de la imagen](imagen3.jpg)
+
+
 
 
 # 3- Configuración del Editor Predeterminado
@@ -36,7 +40,19 @@ archivo.
 - Editar (o crear si no existe) el archivo .gitignore agregando los archivos *.bak
 - Crear un commit y porveer un mensaje descriptivo
 - Intentar un push al repo remoto
+![Descripción de la imagen](imagen4.jpg)
+![Descripción de la imagen](imagen5.jpg)
+
 - En caso de ser necesario configurar las claves SSH requeridas y reintentar el push.
+
+![Descripción de la imagen](imagen6.jpg)
+
+![Descripción de la imagen](imagen7.jpg)
+![Descripción de la imagen](imagen8.jpg)
+![Descripción de la imagen](imagen9.jpg)
+![Descripción de la imagen](imagen10.jpg)
+
+
 
 
 
@@ -45,7 +61,11 @@ archivo.
 - Crear un repo local
 - Agregar archivo Readme.md con algunas lineas de texto
 - Crear repo remoto en GitHub
+![Descripción de la imagen](imagen11.jpg)
+
 - Asociar repo local con remoto
+![Descripción de la imagen](imagen12.jpg)
+
 - Crear archivo .gitignore
 - Crear un commit y proveer un mensaje descriptivo
 - Subir cambios.
@@ -57,13 +77,20 @@ archivo.
 - Cambiarse a esa rama
 - Hacer un cambio en el archivo Readme.md y hacer commit
 - Revisar la diferencia entre ramas
+![Descripción de la imagen](imagen13.jpg)
+
 
 # 7- Merges
 
 - Hacer un merge FF
 - Borrar la rama creada
 - Ver el log de commits
+![Descripción de la imagen](imagen14.jpg)
+
 - Repetir el ejercicio 6 para poder hacer un merge con No-FF
+
+![Descripción de la imagen](imagen15.jpg)
+![Descripción de la imagen](imagen16.jpg)
 
 
 # 8- Resolución de Conflictos
@@ -79,18 +106,36 @@ archivo.
 - Crear una nueva rama conflictBranch
 - Realizar una modificación en la linea 1 del Readme.md desde main y commitear
 - En la conflictBranch modificar la misma línea del Readme.md y commitear
+![Descripción de la imagen](imagen17.jpg)
+
 - Ver las diferencias con git difftool main conflictBranch
+![Descripción de la imagen](imagen18.jpg)
+
 - Cambiarse a la rama main e intentar mergear con la rama conflictBranch
 - Resolver el conflicto con git mergetool
+![Descripción de la imagen](imagen19.jpg)
+![Descripción de la imagen](imagen20.jpg)
+![Descripción de la imagen](imagen21.jpg)
+
+
+
 - Agregar .orig al .gitignore
 - Hacer commit y push
+![Descripción de la imagen](imagen22.jpg)
 
 # 9- Familiarizarse con el concepto de Pull Request
 
 - Explicar que es un pull request.
 - Crear un branch local y agregar cambios a dicho branch.
 - Subir el cambio a dicho branch y crear un pull request.
+![Descripción de la imagen](imagen23.jpg)
+
 - Completar el proceso de revisión en github y mergear el PR al Branch master.
+
+![Descripción de la imagen](imagen24.jpg)
+![Descripción de la imagen](imagen25.jpg)
+![Descripción de la imagen](imagen26.jpg)
+
 
 
 # 10- Algunos ejercicios online
