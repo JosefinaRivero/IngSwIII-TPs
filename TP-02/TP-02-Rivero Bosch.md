@@ -7,6 +7,7 @@
 Diferentes opciones para cada sistema operativo
 https://docs.docker.com/
 Ejecutar el siguiente comando para comprobar versiones de cliente y demonio.
+
 docker versión
 ![Descripción de la imagen](imagen15.jpg)
 
@@ -17,34 +18,42 @@ Familiarizarse con el portal
 
 # 3- Obtener la imagen BusyBox
 Ejecutar el siguiente comando, para bajar una imagen de DockerHub
-docker pull busybox
-![Descripción de la imagen](imagen1.jpg)
 
-Verificar qué versión y tamaño tiene la imagen bajada, obtener una lista de imágenes locales:
+docker pull busybox
+
+![DescripciÃ³n de la imagen](imagen1.jpg)
+
+Verificar quÃ© versiÃ³n y tamaÃ±o tiene la imagen bajada, obtener una lista de imÃ¡genes locales:
+
 docker images
-![Descripción de la imagen](imagen2.jpg)
+![DescripciÃ³n de la imagen](imagen2.jpg)
 
 # 4- Ejecutando contenedores
 Ejecutar un contenedor utilizando el comando run de docker:
+
 docker run busybox
-![Descripción de la imagen](imagen3.jpg)
+
+![DescripciÃ³n de la imagen](imagen3.jpg)
+
 
 Explicar porque no se obtuvo ningún resultado:
 
 El comando docker run busybox ejecuta un contenedor basado en la imagen de busybox, pero no especifica un comando para ejecutar dentro del contenedor. busybox es una imagen extremadamente ligera que contiene un conjunto básico de utilidades de Unix. Por defecto, cuando se ejecuta sin un comando específico, el contenedor simplemente inicia y finaliza inmediatamente, ya que no tiene un proceso que mantener en ejecución.
 
-Especificamos algún comando a correr dentro del contenedor, ejecutar por ejemplo:
+Especificamos algÃºn comando a correr dentro del contenedor, ejecutar por ejemplo:
 
 docker run busybox echo "Hola Mundo"
-![Descripción de la imagen](imagen4.jpg)
+![DescripciÃ³n de la imagen](imagen4.jpg)
 
 Ver los contenedores ejecutados utilizando el comando ps:
-docker ps
-![Descripción de la imagen](imagen5.jpg)
 
-Vemos que no existe nada en ejecución, correr entonces:
+docker ps
+![DescripciÃ³n de la imagen](imagen5.jpg)
+
+Vemos que no existe nada en ejecuciÃ³n, correr entonces:
+
 docker ps -a
-![Descripción de la imagen](imagen6.jpg)
+![DescripciÃ³n de la imagen](imagen6.jpg)
 
 Mostrar el resultado y explicar que se obtuvo como salida del comando anterior.
 
@@ -67,22 +76,23 @@ NAMES: affectionate_tesla, es el nombre asignado automáticamente al contenedor.
 
 
 # 5- Ejecutando en modo interactivo
+
 Ejecutar el siguiente comando
 docker run -it busybox sh
-![Descripción de la imagen](imagen7.jpg)
+![DescripciÃ³n de la imagen](imagen7.jpg)
 
 Para cada uno de los siguientes comandos dentro de contenedor, mostrar los resultados:
 ps
-![Descripción de la imagen](imagen8.jpg)
+![DescripciÃ³n de la imagen](imagen8.jpg)
 
 uptime
-![Descripción de la imagen](imagen9.jpg)
+![DescripciÃ³n de la imagen](imagen9.jpg)
 
 free
-![Descripción de la imagen](imagen10.jpg)
+![DescripciÃ³n de la imagen](imagen10.jpg)
 
 ls -l /
-![Descripción de la imagen](imagen11.jpg)
+![DescripciÃ³n de la imagen](imagen11.jpg)
 
 Salimos del contenedor con:
 exit
@@ -90,28 +100,36 @@ exit
 # 6- Borrando contenedores terminados
 Obtener la lista de contenedores
 docker ps -a
-![Descripción de la imagen](imagen12.jpg)
+![DescripciÃ³n de la imagen](imagen12.jpg)
 
 Para borrar podemos utilizar el id o el nombre (autogenerado si no se especifica) de contenedor que se desee, por ejemplo:
 docker rm elated_lalande
-![Descripción de la imagen](imagen13.jpg)
+![DescripciÃ³n de la imagen](imagen13.jpg)
 
-Para borrar todos los contenedores que no estén corriendo, ejecutar cualquiera de los siguientes comandos:
+Para borrar todos los contenedores que no estÃ©n corriendo, ejecutar cualquiera de los siguientes comandos:
 docker rm $(docker ps -a -q -f status=exited)
 docker container prune
-![Descripción de la imagen](imagen14.jpg)
+![DescripciÃ³n de la imagen](imagen14.jpg)
 
 # 7- Construir una imagen
 Conceptos de DockerFile
 Leer https://docs.docker.com/engine/reference/builder/
 Describir las instrucciones
-FROM: Es la primera instrucción en cualquier Dockerfile y especifica la imagen base a partir de la cual se construirá la nueva imagen. Cada Dockerfile debe comenzar con una instrucción FROM.
-RUN: Ejecuta cualquier comando en una capa nueva de la imagen. Es comúnmente usado para instalar paquetes necesarios.
-ADD: Copia archivos/directorios desde el host a una imagen Docker. A diferencia de COPY, ADD puede extraer archivos tar automáticamente y también puede funcionar con URLs.
-COPY: Similar a ADD, pero solo para copiar archivos o directorios locales al sistema de archivos de la imagen en una ubicación especificada. 
-EXPOSE: Informa a Docker que el contenedor escuchará en el puerto especificado en tiempo de ejecución. No abre el puerto, pero es informativo para la configuración del contenedor. 
-CMD: Define el comando predeterminado que se ejecutará cuando un contenedor se inicie a partir de la imagen. Solo puede haber una instrucción CMD; si hay varias, solo la última se ejecutará.
-ENTRYPOINT: Similar a CMD, pero se usa para definir un comando fijo que siempre se ejecutará cuando se inicie un contenedor. A menudo se combina con CMD para pasar argumentos al comando.
+
+FROM: Especifica la imagen base a partir de la cual se construirá la nueva imagen. Es la primera instrucción en un Dockerfile y establece el entorno sobre el cual se realizarán las modificaciones.
+
+RUN: Ejecuta un comando en el contenedor durante la construcción de la imagen. Es común usar RUN para instalar paquetes o realizar configuraciones.
+
+ADD: Copia archivos y directorios desde la máquina host al contenedor. Además de copiar, ADD puede descomprimir archivos tar automáticamente y descargar archivos desde URLs.
+
+COPY: Similar a ADD, pero solo copia archivos y directorios desde la máquina host al contenedor sin realizar ninguna acción adicional como descomprimir. Se usa generalmente para copiar archivos de la aplicación al contenedor.
+
+EXPOSE: Indica el puerto en el que el contenedor escuchará las conexiones en tiempo de ejecución. Esto no expone el puerto fuera del contenedor, sino que es una forma de documentar que el contenedor utiliza ese puerto.
+
+CMD: Define el comando que se ejecutará por defecto cuando se inicie un contenedor a partir de la imagen. Puede ser sobrescrito en el momento de ejecutar el contenedor. Se puede usar una cadena ejecutable o una lista de argumentos.
+
+ENTRYPOINT: Establece el comando que se ejecutará cuando se inicie el contenedor. A diferencia de CMD, no se puede sobrescribir en el momento de ejecutar el contenedor. ENTRYPOINT define el proceso principal del contenedor.
+
 
 A partir del código https://github.com/ingsoft3ucc/SimpleWebAPI crearemos una imagen.
 
@@ -172,8 +190,8 @@ Ver imágenes disponibles
 
 Ejecutar un contenedor con nuestra imagen
 Subir imagen a nuestra cuenta de dockerhub
-7.1 Inicia sesión en Docker Hub
-Primero, asegúrate de estar autenticado en Docker Hub desde tu terminal:
+7.1 Inicia sesiÃ³n en Docker Hub
+Primero, asegÃºrate de estar autenticado en Docker Hub desde tu terminal:
 docker login
 7.2 Etiquetar la imagen a subir con tu nombre de usuario de Docker Hub y el nombre de la imagen. Por ejemplo:
 docker tag <nombre_imagen_local> <tu_usuario_dockerhub>/<nombre_imagen>:<tag>
@@ -194,7 +212,7 @@ docker pull <tu_usuario_dockerhub>/<nombre_imagen>:<tag>
 
 
 # 8- Publicando puertos
-En el caso de aplicaciones web o base de datos donde se interactúa con estas aplicaciones a través de un puerto al cual hay que acceder, estos puertos están visibles solo dentro del contenedor. Si queremos acceder desde el exterior deberemos exponerlos.
+En el caso de aplicaciones web o base de datos donde se interactÃºa con estas aplicaciones a travÃ©s de un puerto al cual hay que acceder, estos puertos estÃ¡n visibles solo dentro del contenedor. Si queremos acceder desde el exterior deberemos exponerlos.
 
 Ejecutar la siguiente imagen, en este caso utilizamos la bandera -d (detach) para que nos devuelva el control de la consola:
 docker run --name myapi -d mywebapi
@@ -250,6 +268,7 @@ dotnet SimpleWebAPI.dll
 ![Descripción de la imagen](imagen29.jpg)
 
 Salimos del contenedor
+
 
 
 # 10- Montando volúmenes
@@ -327,3 +346,4 @@ Crear BD, Tablas y ejecutar SELECT
 
 # 13- Presentación del trabajo práctico.
 Subir un archivo md (puede ser en una carpeta) trabajo-practico-02 con las salidas de los comandos utilizados. Si es necesario incluir también capturas de pantalla.
+
