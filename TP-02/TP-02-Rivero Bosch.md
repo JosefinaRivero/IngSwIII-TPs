@@ -343,6 +343,9 @@ Docker exec: Permite ejecutar comandos dentro de un contenedor que ya está en ej
 Armar un contenedor con SQL Server
 Crear BD, Tablas y ejecutar SELECT
 
+![Descripción de la imagen](imagen42.jpg)
+![Descripción de la imagen](imagen44.jpg)
+![Descripción de la imagen](imagen43.jpg)
 
 # 13- Presentación del trabajo práctico.
 Subir un archivo md (puede ser en una carpeta) trabajo-practico-02 con las salidas de los comandos utilizados. Si es necesario incluir también capturas de pantalla.
