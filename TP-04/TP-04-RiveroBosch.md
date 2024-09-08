@@ -51,6 +51,10 @@ Estas prácticas son esenciales en el desarrollo de software ágil y permiten la e
 ![Descripción de la imagen](imagen6.png)
 
  ### - 4.3 Explicar por qué es necesario contar con una tarea de Publish en un pipeline que corre en un agente de Microsoft en la nube.
+
+La tarea de Publish es necesaria para que los artefactos generados durante el pipeline sean accesibles y puedan ser utilizados en otros contextos, y para proporcionar una mayor trazabilidad y control sobre los cambios realizados en el código.
+
+
  ### - 4.4 Descargar el resultado del pipeline y correr localmente el software compilado.
 ![Descripción de la imagen](imagen7.png)
 ![Descripción de la imagen](imagen9.png)
@@ -68,14 +72,42 @@ Estas prácticas son esenciales en el desarrollo de software ágil y permiten la e
 
 
 ### - 4.7 Configurar CI en ambos pipelines (YAML y Classic Editor). Mostrar resultados de la ejecución automática de ambos pipelines al hacer un commit en la rama main.
+
+Classic editor:
 ![Descripción de la imagen](imagen18.png)
 ![Descripción de la imagen](imagen19.png)
+
+yaml:
 ![Descripción de la imagen](imagen20.png)
 ![Descripción de la imagen](imagen21.png)
 ![Descripción de la imagen](imagen22.png)
 ![Descripción de la imagen](imagen23.png)
 
 ### - 4.8 Explicar la diferencia entre un agente MS y un agente Self-Hosted. Qué ventajas y desventajas hay entre ambos? Cuándo es conveniente y/o necesario usar un Self-Hosted Agent?
+
+Diferencias entre Agente MS y Agente Self-Hosted:
+
+Agente MS: proporcionado por Microsoft, fácil de configurar, no requiere mantenimiento, se actualiza automáticamente.
+
+Ventajas: fácil de usar, no requiere mantenimiento.
+
+Desventajas: no se puede personalizar, no se puede acceder a recursos locales.
+
+
+Agente Self-Hosted: se ejecuta en una máquina local o virtual, requiere configuración y mantenimiento por el usuario.
+
+Ventajas: se puede personalizar, se puede acceder a recursos locales.
+
+Desventajas: requiere configuración y mantenimiento.
+
+
+
+Cuándo usar un Self-Hosted Agent?
+
+Se requiere acceso a recursos locales o a la red local.
+Se necesitan recursos específicos o personalizados.
+Se requiere una mayor flexibilidad y control sobre la configuración y el mantenimiento del agente.
+
 ### - 4.8 Crear un Pool de Agentes y un Agente Self-Hosted
 ![Descripción de la imagen](imagen24.png)
 ![Descripción de la imagen](imagen25.png)
