@@ -146,4 +146,12 @@ Corroboramos que se realizo el cambio:
 
 
 4.14\. Realizar un pipeline (no release) que incluya el deploy a QA y a PROD con una aprobación manual. El pipeline debe estar construido en YAML sin utilizar el editor clásico de pipelines ni el editor clásico de pipelines de release.
+
+![Descripción de la imagen](imagen45.png)
+![Descripción de la imagen](imagen46.png)
+![Descripción de la imagen](imagen47.png)
+![Descripción de la imagen](imagen48.png)
+![Descripción de la imagen](imagen49.png)
+![Descripción de la imagen](imagen50.png)
+
  
