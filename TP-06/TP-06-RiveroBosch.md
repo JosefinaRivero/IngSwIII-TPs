@@ -1,9 +1,13 @@
 ## Trabajo Práctico 6 - Pruebas Unitarias
 
 ### 4- Desarrollo:
+
  
+
 #### 4.1 Creación de una BD SQL Server para nuestra App
+```bash
 A\. Crear una BD Azure SQL Database (Ver Instructivo 5.1)
+```
 ![Descripción de la imagen](imagen1.png)
 ![Descripción de la imagen](imagen2.png)
 ![Descripción de la imagen](imagen3.png)
