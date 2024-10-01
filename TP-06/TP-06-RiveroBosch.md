@@ -252,34 +252,41 @@ D\. Verificamos que se creo un archivo test-result.xml en el directorio test-res
 #### 4.6 Modificamos el código de nuestra API y creamos nuevas pruebas unitarias:
 
 A\. Realizar al menos 5 de las siguientes modificaciones sugeridas al código de la API:
-  - Al agregar y al editar un empleado, controlar que el nombre del empleado no esté repetido.
-  - La longitud máxima del nombre y apellido del empleado debe ser de 100 caracteres.
-  - Almacenar el nombre en la BD siempre con la primera letra de los nombres en Mayuscula y todo el apellido en Mayusculas. Ejemplo, si recibo juan carlos chamizo, se debe almacenar como Juan Carlos CHAMIZO.
-  - Asegurar que el nombre del empleado no contenga caracteres especiales o números, a menos que sea necesario (por ejemplo, caracteres especiales en apellidos como "O'Connor" o "García").
-  - Validar que el nombre tenga un número mínimo de caracteres, por ejemplo, al menos dos caracteres para evitar entradas inválidas como "A".
-  - Verificar que el nombre no contenga números, ya que no es común en los nombres de empleados.
-  - Asegurar que cada parte del nombre (separada por espacios) tenga al menos un carácter o más, por ejemplo, para evitar "A B".
-  - Verificar que no haya palabras vacías o que el nombre no esté compuesto solo de espacios.
-  - Prohibir el uso de nombres triviales o genéricos como "Empleado", "N/A", "Nombre", etc.
-  - Evitar que se ingresen caracteres repetidos de forma excesiva, como "Juuuuaannnn".
-  - Implementar un filtro para evitar el uso de palabras inapropiadas, ofensivas o que puedan violar políticas internas.
-En todos los casos donde no se cumplan las condiciones, la API debe devolver un error de HTTP 400 Bad Request y un Json indicando el error, por ejemplo:
-```json
-{
-  "status": 400,
-  "error": "Bad Request",
-  "message": "El nombre del empleado ya existe."
-}
-```
 
+![Descripción de la imagen](imagen51.png)
+
+ 
 B\. Crear las pruebas unitarias necesarias para validar las modificaciones realizadas en el código
+
+![Descripción de la imagen](imagen52.png)
+![Descripción de la imagen](imagen53.png)
+![Descripción de la imagen](imagen54.png)
+![Descripción de la imagen](imagen55.png)
+![Descripción de la imagen](imagen56.png)
+![Descripción de la imagen](imagen57.png)
+
 
 #### 4.7 Modificamos el código de nuestro Front y creamos nuevas pruebas unitarias:
 
 A\. Realizar en el código del front las mismas modificaciones hechas a la API. 
 
+![Descripción de la imagen](imagen58.png)
+![Descripción de la imagen](imagen59.png)
+![Descripción de la imagen](imagen60.png)
+![Descripción de la imagen](imagen61.png)
+![Descripción de la imagen](imagen62.png)
+![Descripción de la imagen](imagen63.png)
+![Descripción de la imagen](imagen64.png)
+
+
 B\. Las validaciones deben ser realizadas en el front sin llegar a la API, y deben ser mostradas en un toast como por ejemplo https://stackblitz.com/edit/angular12-toastr?file=src%2Fapp%2Fapp.component.ts o https://stackblitz.com/edit/angular-error-toast?file=src%2Fapp%2Fcore%2Frxjsops.ts
 
 C\. Crear las pruebas unitarias necesarias en el front para validar las modificaciones realizadas en el código del front.
+
+
+![Descripción de la imagen](imagen65.png)
+![Descripción de la imagen](imagen66.png)
+![Descripción de la imagen](imagen67.png)
+
 
 
