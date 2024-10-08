@@ -7,6 +7,8 @@
   	```bash
 	npm install karma-coverage --save-dev
    	```
+![Descripción de la imagen](imagen1.png)
+
    	 - ##### 4.1.2 Editar nuestro archivo karma.conf.js para que incluya reporte de cobertura
   	```javascript
 	module.exports = function (config) {
@@ -50,6 +52,8 @@
    	  ```bash
    	  dotnet add package coverlet.collector
    	  ```
+![Descripción de la imagen](imagen3.png)
+
    	- ##### 4.1.4 Agregar a nuestro pipeline ANTES del Build de Back la tarea de test con los argumentos especificados y la de publicación de resultados de cobertura:
 	```yaml
     - task: DotNetCoreCLI@2
@@ -65,6 +69,8 @@
         failIfCoverageEmpty: false
       displayName: 'Publicar resultados de code coverage del back-end'
 	```
+![Descripción de la imagen](imagen4.png)
+
  	- ##### 4.1.5 Agregar a nuestro pipeline ANTES del Build de front la tarea de test y la de publicación de los resultados.
 	   ```yaml
 	    - script: npx ng test --karma-config=karma.conf.js --watch=false --browsers ChromeHeadless --code-coverage
@@ -88,11 +94,12 @@
 	      displayName: 'Publicar resultados de pruebas unitarias del front'
     	```
 	
+![Descripción de la imagen](imagen5.png)
+
 	- ##### 4.1.6 Ejecutar el pipeline y analizar el resultado de las pruebas unitarias y la cobertura de código.
 
- 	![image](https://github.com/user-attachments/assets/2798520e-a33e-40bf-9337-c822dfb7e805)
-
-  	![image](https://github.com/user-attachments/assets/e489405d-85a3-4cc9-ade3-19f5b98a3737)
+![Descripción de la imagen](imagen6.png)
+![Descripción de la imagen](imagen7.png)
 
 
 #### 4.2 Agregar Análisis Estático de Código con SonarCloud:
@@ -143,6 +150,8 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
 		      displayName: 'Prepare SonarCloud'
 	        
 		 ```
+![Descripción de la imagen](imagen8.png)
+
 
   	  - Despues de nuestra tarea de Build del Back:
 		   ```yaml
@@ -156,13 +165,33 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
 		      inputs:
 		        pollingTimeoutSec: '300'
 	    ```
+![Descripción de la imagen](imagen9.png)
+
   	- ##### 4.2.2 Vemos el resultado de nuestro pipeline, en extensions tenemos un link al análisis realizado por SonarCloud
 
-  	![image](https://github.com/user-attachments/assets/312a3c9f-659e-4249-b204-aa1abd312cc2)
-  
+![Descripción de la imagen](imagen10.png)  
+
 	- ##### 4.2.3 Ir al link y analizar toda la información obtenida. Detallar en la entrega del TP los puntos más relevantes del informe, qué significan y para qué sirven.
 
-  	![image](https://github.com/user-attachments/assets/6e1ce439-5f57-41b9-8624-1491d57120bd)
+  	![Descripción de la imagen](imagen11.png)
+
+**Consistencia**: 
+sugiere utilizar GeneratedRegexAttribute para generar la implementación de expresiones regulares en tiempo de compilación en lugar de en tiempo de ejecución. Esto puede mejorar el rendimiento y la mantenibilidad, ya que la expresión regular se compila una vez y se reutiliza, lo cual es más eficiente. Esta recomendación mejora la consistencia de tu código al utilizar patrones más eficientes y asegura que el manejo de regex se adhiera a estándares modernos.
+
+
+
+**Mantenibilidad y Confiabilidad**: 
+Una propiedad de tipo valor en una acción de un controlador debería ser requerida o anotada con el atributo JsonRequiredAttribute. Esto es crucial para prevenir el under-posting, que ocurre cuando no se envían todos los valores esperados al servidor, lo que podría llevar a un comportamiento inesperado. Asegura que las entradas estén debidamente validadas, mejora la confiabilidad de la aplicación. Previene escenarios en los que un cliente podría enviar datos incompletos, lo que podría causar errores o problemas de integridad de datos.
+
+
+
+**Confiabilidad**: 
+El análisis recomienda utilizar await RunAsync en lugar de una llamada sincrónica. Esto se alinea con las mejores prácticas para la programación asincrónica en .NET, mejorando la capacidad de respuesta y escalabilidad de la aplicación. Este cambio promueve una mejor utilización de los recursos y el rendimiento de la aplicación, especialmente en operaciones que dependen de entrada/salida, asegurando que tu aplicación pueda manejar múltiples solicitudes de manera eficiente.
+
+
+
+**Seguridad**: 
+El análisis señala la presencia de una contraseña de base de datos en el archivo appsettings.json, recomendando su eliminación u ofuscación para prevenir vulnerabilidades de seguridad. Hardcodear información sensible plantea un gran riesgo de seguridad, ya que puede llevar al acceso no autorizado. Seguir prácticas de codificación seguras, como usar variables de entorno o cofres seguros para almacenar datos sensibles, mitiga este riesgo.
 
 
 #### 4.3 Pruebas de Integración con Cypress:
@@ -203,20 +232,31 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
   	```bash
 	npm install cypress --save-dev
    	```
+  	![Descripción de la imagen](imagen12.png)
+
    	- ##### 4.3.2 Abrir Cypress:
   	```bash
    	npx cypress open
    	```
+ ![Descripción de la imagen](imagen13.png)
+
 	- ##### 4.3.3 Inicializar Cypress en nuestro proyecto como se indica en el instructivo 5.2
+
+ ![Descripción de la imagen](imagen14.png)
+ ![Descripción de la imagen](imagen15.png)
+
    	Esto creará automáticamente una estructura de carpetas dentro de tu proyecto. 
-	![image](https://github.com/user-attachments/assets/b0d3de46-91b2-4d19-bff0-7998a78c1521)
 
 	 - cypress/e2e: Aquí es donde se almacenan tus archivos de prueba.
 	 - cypress/fixtures: Aquí se almacenan los datos de prueba que puedes usar en tus tests.
 	 - cypress/support: Contiene archivos de configuración y comandos personalizados.
 
+ ![Descripción de la imagen](imagen16.png)
+
   	- ##### 4.3.4 Crear nuestra primera prueba navegando a nuestro front.
  	En la carpeta cypress/e2e, crear un archivo con el nombre primer_test.js y agregar el siguiente código para probar la página de inicio de nuestro front:
+ ![Descripción de la imagen](imagen17.png)
+
   	```js
 	  describe('Mi primera prueba', () => {
 	  it('Carga correctamente la página de ejemplo', () => {
@@ -225,25 +265,34 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
 	  })
 	})
    	```
+ ![Descripción de la imagen](imagen18.png)
+
 	- ##### 4.3.5 Correr nuestra primera prueba
  	Si está abierta la interfaz gráfica de Cypress, aparecerá el archivo primer_test.cy.js en la lista de pruebas. Clic en el archivo para ejecutar la prueba.
-  	<img width="1154" alt="image" src="https://github.com/user-attachments/assets/f34a9af2-1692-441a-b1f0-37055ae2d7a0">
-   	<img width="1436" alt="image" src="https://github.com/user-attachments/assets/8758c000-2f40-4a05-8cb0-c5fa56d583f9">
+
+  ![Descripción de la imagen](imagen19.png)
+ ![Descripción de la imagen](imagen20.png)
 	
 	También es posible ejecutar Cypress en modo "headless" (sin interfaz gráfica) utilizando el siguiente comando:
 	```bash
  	npx cypress run
  	```
- 	![image](https://github.com/user-attachments/assets/78ecba2e-9e40-4eb0-a286-56908723dee1)
+
+ ![Descripción de la imagen](imagen21.png)
+ ![Descripción de la imagen](imagen22.png)
+
 
 
 	- ##### 4.3.6 Modificar nuestra prueba para que falle.
 	  - Editamos el archivo primer_test.cy.js y hacemos que espere otra cosa en el título
 	  - Ejecutamos cypress en modo headless
-	 ![image](https://github.com/user-attachments/assets/b431354b-0e4f-492e-8c40-2993991ac76d)
+	 ![Descripción de la imagen](imagen23.png)
+
 
 	Cypress captura automáticamente pantallas cuando una prueba falla. Las capturas de pantalla se guardan en la carpeta `cypress/screenshots`.
-	<img width="1136" alt="image" src="https://github.com/user-attachments/assets/e6f26695-def4-4596-b5c6-152f5b95aa59">
+
+	 ![Descripción de la imagen](imagen24.png)
+
 
  	- ##### 4.3.6 Grabar nuestras pruebas para que Cypress genere código automático y genere reportes:
     	 - Cerramos Cypress
@@ -266,9 +315,13 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
 		});
 
 		```
+ ![Descripción de la imagen](imagen25.png)
+
        - Corremos nuevamente Cypress con npx cypress open, una vez que se ejecute nuestra prueba tendremos la opción de "Add Commands to Test". Esto permitirá interactuar con la aplicación y generar automáticamente comandos de prueba basados en las interacciones con la página:
          
-         <img width="748" alt="image" src="https://github.com/user-attachments/assets/73c287fc-de00-477d-abbf-d905eb11cdb3">
+          ![Descripción de la imagen](imagen26.png)
+
+
 
        - Por ejemplo, si agregamos un nuevo empleado y luego verificamos que esté en la lista, Cypress nos generará un código como este:
  	```typescript
@@ -287,12 +340,25 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
       })
 	})
  	```
+
+ ![Descripción de la imagen](imagen27.png)
+ ![Descripción de la imagen](imagen28.png)
+
   	- Por supuesto que habrá que hacerle ajustes, como por ejemplo que se fije siempre en la última fila de la grilla y no en la posición 15 como lo grabó, es ahí cuando consultando la documentación de Cypress debemos ver cómo modificar el código, en nuestro caso de ejemplo sería así:
   	  ```typescript
   	  cy.get('tr:last-child > :nth-child(2)').should('have.text', ' Oso Pratto ');
   	  ```
+
+ ![Descripción de la imagen](imagen29.png)
+
   	- ##### 4.3.7 Hacemos prueba de editar un empleado
     	 - Creamos en cypress/e2e/ un archivo editEmployee_test.cy.js con el siguiente contenido, guardamos y aparecerá en Cypress:
+
+ ![Descripción de la imagen](imagen30.png)
+ ![Descripción de la imagen](imagen31.png)
+
+
+
   	       
 		```js
   		describe('editEmployeeTest', () => {
@@ -301,10 +367,13 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
 		      })
 			})
   	  	```
-  	
- 	<img width="845" alt="image" src="https://github.com/user-attachments/assets/d37524a6-fcfc-431c-9a69-594bf4dbbc62">
-	- Hacemos "Add command to the test" y empezamos a interactuar con la página
- 	<img width="679" alt="image" src="https://github.com/user-attachments/assets/e7ad9389-3f68-42fc-95f2-68a7a79a029a">
+ ![Descripción de la imagen](imagen32.png)
+ ![Descripción de la imagen](imagen33.png)
+
+  		- Hacemos "Add command to the test" y empezamos a interactuar con la página
+
+ 	 ![Descripción de la imagen](imagen34.png)
+
   
   	- Hacemos algunos ajustes al código generado:
    
@@ -341,6 +410,8 @@ La plataforma destaca por ofrecer un tablero interactivo donde se pueden visuali
 	});
 
   	```
+ ![Descripción de la imagen](imagen35.png)
+
 
 #### 4.4 Desafíos:
 - Integrar en el pipeline SonarCloud para nuestro proyecto Angular, mostrar el resultado obtenido en SonarCloud
