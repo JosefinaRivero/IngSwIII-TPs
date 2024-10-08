@@ -48,6 +48,8 @@
 	};
 
 	```
+![Descripción de la imagen](imagen2.png)
+
    	- ##### 4.1.3 En el dir raiz del proyecto EmployeeCrudApi.Tests ejecutar:
    	  ```bash
    	  dotnet add package coverlet.collector
