@@ -16,11 +16,11 @@
 
           - DockerFile Back:
 
-			![Descripción de la imagen](imagen3.png)
+![Descripción de la imagen](imagen3.png)
 
           - DockerFile Front:
 
-			![Descripción de la imagen](imagen4.png)
+![Descripción de la imagen](imagen4.png)
 
    	- ##### 4.1.2 Crear un recurso ACR en Azure Portal siguiendo el instructivo 5.1
 
