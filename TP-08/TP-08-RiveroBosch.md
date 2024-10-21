@@ -7,11 +7,12 @@
 
 
 #### 4.1 Modificar nuestro pipeline para construir imágenes Docker de back y front y subirlas a ACR
-- Desarrollo del punto 4.1: 
+- Desarrollo del punto 4.1:
+ 
 	- ##### 4.1.1 Crear archivos DockerFile para nuestros proyectos de Back y Front
    	  - En la raiz de nuestro repo crear una carpeta docker con dos subcarpetas api y front, dentro de cada una de ellas colocar los dockerfiles correspondientes para la creación de imágenes docker en función de la salida de nuestra etapa de Build y Test
 
-        	![Descripción de la imagen](imagen2.png)
+![Descripción de la imagen](imagen2.png)
 
           - DockerFile Back:
 
