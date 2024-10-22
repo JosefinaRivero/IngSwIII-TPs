@@ -71,7 +71,7 @@
 
 
 ```yaml
-		trigger:
+trigger:
   - main
 
 pool:
