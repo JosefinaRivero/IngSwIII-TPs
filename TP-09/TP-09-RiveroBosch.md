@@ -953,12 +953,6 @@ stages:
                           --settings API_URL="$(API_WEB_URL_PROD)" \
 	
   	  ```
-### 6-  Presentación del trabajo práctico.
-- Subir un doc al repo de GitHub con las capturas de pantalla de los pasos realizados. Debe ser un documento (md, word, o pdf), no videos. Y el documento debe seguir los pasos indicados en el Desarrollo del TP.
-- Acceso al repo de Azure Devops para revisar el trabajo realizado.
-
-### 7-  Criterio de Calificación
-El paso 4.1 representa un 20% de la nota total, el paso 4.2 representa el 80% restante.
 
 
 
