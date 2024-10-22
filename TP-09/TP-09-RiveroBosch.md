@@ -951,8 +951,7 @@ stages:
                         # Set environment variables
                         az webapp config appsettings set --name $(AppServicesFrontNameContainersProd) --resource-group $(ResourceGroupName) \
                           --settings API_URL="$(API_WEB_URL_PROD)" \
-	
-  	  ```
+```
 
 
 
