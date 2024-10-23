@@ -42,6 +42,8 @@
 ![Descripción de la imagen](imagen16.png)
 ![Descripción de la imagen](imagen17.png)
 ![Descripción de la imagen](imagen18.png)
+![Descripción de la imagen](imagen23.png)
+
 
 - 4.2.5 Entregar un pipeline que incluya:
   - A) Etapa Construcción y Pruebas Unitarias y Code Coverage Back y Front
@@ -56,6 +58,11 @@
 
 
 ![Descripción de la imagen](imagen19.png)
+![Descripción de la imagen](imagen24.png)
+![Descripción de la imagen](imagen25.png)
+![Descripción de la imagen](imagen26.png)
+![Descripción de la imagen](imagen27.png)
+
 ![Descripción de la imagen](imagen20.png)
 ![Descripción de la imagen](imagen21.png)
 ![Descripción de la imagen](imagen22.png)
@@ -368,7 +375,7 @@ stages:
     dependsOn: BuildAndTestBackAndFront
     condition: succeeded()
     pool:
-      vmImage: 'windows-latest'
+      vmImage: 'ubuntu-latest'
     
     jobs:
       # -------------------------------------------------------------------------------
@@ -490,7 +497,7 @@ stages:
     dependsOn: DeployToWebAppQA
     condition: succeeded()
     pool:
-      vmImage: 'windows-latest'
+      vmImage: 'ubuntu-latest'
       
     jobs:
       # -------------------------------------------------------------------------------
